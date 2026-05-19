@@ -5,33 +5,31 @@
 
 const VIDEOS = [
   // ─────────────────────────────────────────────────────────
-  // 1. F1 / MOTORSPORT (Driver61 style)
+  // 1. F1 / MOTORSPORT
   // ─────────────────────────────────────────────────────────
   {
-    id: "f1-channel",
+    id: 1,
     icon: "🏎️",
-    bg: "linear-gradient(135deg,#0a0a0a 0%,#1a0505 50%,#3a0a0a 100%)",
-    bgAccent: "radial-gradient(circle at 70% 40%, rgba(220,30,40,0.35), transparent 55%)",
-    channelDot: "#dc1e28",
-    channelName: "Premium F1 Channel",
+    color: "linear-gradient(135deg,#0a0a0a 0%,#1a0505 50%,#3a0a0a 100%)",
+    accent: "#dc1e28",
     channelInitials: "F1",
     channelColor: "#dc1e28",
-    subs: "1.2M subscribers",
-    headlineParts: ['THE PHYSICS BEHIND ', { accent: 'F1', color: '#ffe14a', bg: '#dc1e28' }, ' THUMBNAILS'],
+    channel: "Premium F1 Channel · Thumbnail & Title Strategy",
     title: "Packaging strategy for a 1.2M-subscriber F1 channel",
-    subtitle: "Premium F1 / Motorsport · Thumbnail strategy & title testing",
     stats: "Avg 870K views per video · 6:12 watch time",
     duration: "Channel Strategy",
-    tags: ["Channels", "Strategy", "Sports", "Thumbnails"],
-    metaLine: "Premium F1 channel · Thumbnail & title strategy · 14 months",
+    tags: ["Channels", "Strategy", "Thumbnails"],
+    playerTitle: "Premium F1 Channel",
+    playerSub: "Thumbnail Strategist · 14 months",
+    headline: "Packaging strategy for a 1.2M-subscriber F1 channel — views up 42%, CTR from 4.1% to 5.8%",
+    meta: "Premium F1 / Motorsport · Thumbnail strategy & title testing · 14 months",
     metrics: [
       { val: "1.2M", lbl: "Subscribers" },
-      { val: "+42%", lbl: "Views per video", trend: "up" },
-      { val: "5.8%", lbl: "Avg CTR", trend: "up" },
+      { val: "+42%", lbl: "Views per video" },
+      { val: "5.8%", lbl: "Avg CTR" },
       { val: "6:12", lbl: "Watch time" },
     ],
-    body: `
-      <h3>The channel</h3>
+    description: `<h3>The channel</h3>
       <p>A 1.2M-subscriber F1 channel known for technical depth — race analysis, driver coaching, engineering breakdowns. Strong content, expert-led, but plateauing on browse traffic.</p>
       <h3>The diagnosis</h3>
       <p>Their thumbnails leaned heavily on race photography and team liveries. Great for fans who already knew the channel — invisible to the YouTube homepage feed where new viewers live.</p>
@@ -41,8 +39,25 @@ const VIDEOS = [
       <p><strong>Browse vs search split:</strong> Mapped every video by traffic source intent before packaging. Race analysis = curiosity hook. Technical explainer = SEO-optimized clarity.</p>
       <h3>The result</h3>
       <p>Average views per video grew 42% over 14 months. CTR climbed from 4.1% to 5.8%. A single repackaged back-catalogue video crossed 7M views, the channel's highest-performing video at the time.</p>
-    `,
+      <h3>Tags</h3>`,
+    descTags: ["Channels", "Strategy", "Thumbnails", "CTR Optimization"],
   },
+  // ─────────────────────────────────────────────────────────
+  // 2. TECH EDUCATION
+  // ─────────────────────────────────────────────────────────
+  {
+    id: 2,
+    icon: "💻",
+    color: "#1a1a2a",
+    accent: "#60a5fa",
+    title: "Redesigned 200+ thumbnails for a 500K sub tech channel — CTR went from 2.4% to 5.5%",
+    channel: "Channel B · Tech Education",
+    channelInitials: "TE",
+    channelColor: "#2563eb",
+    stats: "200+ thumbnails · 1.2M new views",
+    duration: "Case Study",
+    tags: ["Channels", "Thumbnails", "CTR Optimization", "Results"],
+    playerTitle: "Channel B — Tech Education",
     playerSub: "Thumbnail Strategist · 6 months",
     headline: "Redesigned 200+ thumbnails for a 500K sub tech channel — CTR went from 2.4% to 5.5%",
     meta: "Tech Education · Thumbnail Overhaul · Aug 2022 – Jan 2023",
@@ -59,7 +74,7 @@ const VIDEOS = [
     <p><strong>Design System:</strong> Built a repeatable template system — 3 thumbnail "types" based on content category. Consistency improved brand recognition.</p>
     <p><strong>Testing:</strong> A/B tested 12 different thumbnail directions before rolling out the new system channel-wide.</p>
     <h3>Tags</h3>`,
-    descTags: ["Thumbnails", "CTR Optimization", "Results"]
+    descTags: ["Thumbnails", "CTR Optimization", "Results"],
   },
   {
     id: 3,
