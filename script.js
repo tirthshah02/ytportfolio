@@ -1,53 +1,48 @@
-// ═══════════════════════════════════
-// DATA — Replace with your real info
-// ═══════════════════════════════════
+// ═══════════════════════════════════════════════════════════
+// PLACEHOLDER DATA — Modeled on real channels (anonymized/composite)
+// Channels are based on actual portfolio work but framed for the site.
+// ═══════════════════════════════════════════════════════════
 
 const VIDEOS = [
+  // ─────────────────────────────────────────────────────────
+  // 1. F1 / MOTORSPORT (Driver61 style)
+  // ─────────────────────────────────────────────────────────
   {
-    id: 1,
-    icon: "💰",
-    color: "#1a3a2a",
-    accent: "#5de0b5",
-    title: "How I Grew a Personal Finance Channel from 0 to 200K Subscribers",
-    channel: "Channel A · Personal Finance",
-    channelInitials: "PF",
-    channelColor: "#065fd4",
-    stats: "200K subscribers · 18 months",
-    duration: "Case Study",
-    tags: ["Channels", "Growth", "Strategy"],
-    playerTitle: "Channel A — Personal Finance",
-    playerSub: "Strategist & Head of Content · 18 months",
-    headline: "Built a finance channel from scratch to 200K subscribers in 18 months",
-    meta: "Personal Finance · Strategy + Thumbnails + Scripting · Jan 2022 – Jun 2023",
+    id: "f1-channel",
+    icon: "🏎️",
+    bg: "linear-gradient(135deg,#0a0a0a 0%,#1a0505 50%,#3a0a0a 100%)",
+    bgAccent: "radial-gradient(circle at 70% 40%, rgba(220,30,40,0.35), transparent 55%)",
+    channelDot: "#dc1e28",
+    channelName: "Premium F1 Channel",
+    channelInitials: "F1",
+    channelColor: "#dc1e28",
+    subs: "1.2M subscribers",
+    headlineParts: ['THE PHYSICS BEHIND ', { accent: 'F1', color: '#ffe14a', bg: '#dc1e28' }, ' THUMBNAILS'],
+    title: "Packaging strategy for a 1.2M-subscriber F1 channel",
+    subtitle: "Premium F1 / Motorsport · Thumbnail strategy & title testing",
+    stats: "Avg 870K views per video · 6:12 watch time",
+    duration: "Channel Strategy",
+    tags: ["Channels", "Strategy", "Sports", "Thumbnails"],
+    metaLine: "Premium F1 channel · Thumbnail & title strategy · 14 months",
     metrics: [
-      { val: "200K", lbl: "Subscribers" },
-      { val: "18mo", lbl: "Timeline" },
-      { val: "4.8%", lbl: "Avg CTR" },
-      { val: "8.2min", lbl: "Avg Watch Time" },
+      { val: "1.2M", lbl: "Subscribers" },
+      { val: "+42%", lbl: "Views per video", trend: "up" },
+      { val: "5.8%", lbl: "Avg CTR", trend: "up" },
+      { val: "6:12", lbl: "Watch time" },
     ],
-    description: `<h3>The Mandate</h3>
-    <p>Build a personal finance channel from zero. No existing audience, no brand recognition. Just a camera and a strategy.</p>
-    <h3>What I Did</h3>
-    <p><strong>Positioning:</strong> Carved out a specific niche — personal finance for young Indians — instead of competing with generic money channels.</p>
-    <p><strong>Thumbnails:</strong> Moved away from talking-head shots to high-contrast text + emotion combos. CTR jumped from 2.1% to 4.8% within 60 days.</p>
-    <p><strong>Scripting:</strong> Built a hook framework that front-loaded the payoff. Average view duration increased from 42% to 61%.</p>
-    <p><strong>Cadence:</strong> 2 videos/week with a rolling 8-week content calendar planned in advance.</p>
-    <h3>Tags</h3>`,
-    descTags: ["Strategy", "Thumbnails", "Scripting", "Growth", "CTR Optimization"]
+    body: `
+      <h3>The channel</h3>
+      <p>A 1.2M-subscriber F1 channel known for technical depth — race analysis, driver coaching, engineering breakdowns. Strong content, expert-led, but plateauing on browse traffic.</p>
+      <h3>The diagnosis</h3>
+      <p>Their thumbnails leaned heavily on race photography and team liveries. Great for fans who already knew the channel — invisible to the YouTube homepage feed where new viewers live.</p>
+      <h3>What I worked on</h3>
+      <p><strong>Thumbnail rebuild:</strong> Moved from photography-led to concept-led. Big bold typography, single emotional focal point, high-contrast color isolation. Tested 3 visual languages before landing on the one.</p>
+      <p><strong>Title A/B testing:</strong> Ran 60+ title variants over 6 months. Curiosity gap titles outperformed clarity titles by 38% on browse traffic, but lost in search. Built different title formulas for different content buckets.</p>
+      <p><strong>Browse vs search split:</strong> Mapped every video by traffic source intent before packaging. Race analysis = curiosity hook. Technical explainer = SEO-optimized clarity.</p>
+      <h3>The result</h3>
+      <p>Average views per video grew 42% over 14 months. CTR climbed from 4.1% to 5.8%. A single repackaged back-catalogue video crossed 7M views, the channel's highest-performing video at the time.</p>
+    `,
   },
-  {
-    id: 2,
-    icon: "🧠",
-    color: "#1a1a3a",
-    accent: "#818cf8",
-    title: "Redesigned 200+ Thumbnails for a Tech Education Channel — CTR Results",
-    channel: "Channel B · Tech Education",
-    channelInitials: "TE",
-    channelColor: "#7c3aed",
-    stats: "1.2M views · +3.1% CTR lift",
-    duration: "Results",
-    tags: ["Thumbnails", "Results", "CTR Optimization"],
-    playerTitle: "Channel B — Tech Education",
     playerSub: "Thumbnail Strategist · 6 months",
     headline: "Redesigned 200+ thumbnails for a 500K sub tech channel — CTR went from 2.4% to 5.5%",
     meta: "Tech Education · Thumbnail Overhaul · Aug 2022 – Jan 2023",
