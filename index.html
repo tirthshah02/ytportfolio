@@ -154,7 +154,7 @@
         <div class="watch-meta" id="watchMeta"></div>
 
         <div class="watch-actions">
-          <button class="action-pill red">
+          <button class="action-pill red" onclick="showPage('contact')">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             Hire Me
           </button>
@@ -162,7 +162,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20v-2z"/></svg>
             Back to Feed
           </button>
-          <button class="action-pill">
+          <button class="action-pill" onclick="navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16c-.8 0-1.4.4-1.9.9L8.9 12.7c.1-.2.1-.5.1-.7s0-.5-.1-.7l7.1-4.1c.5.5 1.2.8 1.9.8a3 3 0 0 0 0-6 3 3 0 0 0-3 3c0 .2 0 .5.1.7L7.9 9.8C7.4 9.3 6.7 9 6 9a3 3 0 0 0 0 6c.7 0 1.4-.3 1.9-.8l7.2 4.2c-.1.2-.1.4-.1.6a3 3 0 0 0 3 3 3 3 0 0 0 0-6z"/></svg>
             Share
           </button>
@@ -183,9 +183,7 @@
     <div class="about-layout">
       <div class="about-hero">
         <div>
-          <div class="about-avatar">
-              <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-            </div>
+          <div class="about-avatar">TS</div>
           <div class="about-name">Tirth Shah</div>
           <div class="about-handle">YouTube Strategist & Content Producer</div>
           <div class="about-stats-row">
@@ -210,7 +208,7 @@
         <div>
           <p class="about-text">
             I help YouTube channels grow — not through luck, but through strategy. Thumbnails that make people stop scrolling. Titles that make them click. Videos that make them stay.<br><br>
-            I've worked across niches: finance, education, tech, lifestyle. Every channel is different. Every strategy is custom-built.<br><br>
+            I've worked across niches: sport, coffee, consumer tech, faceless explainers, gaming, travel, and self-improvement. Every channel is different. Every strategy is custom-built.<br><br>
             Remote-based. Open to full-time roles globally.
           </p>
         </div>
@@ -289,7 +287,7 @@
         </ul>
       </div>
 
-      <button class="action-pill red" style="font-size:16px; padding:12px 28px; margin-top:8px">
+      <button class="action-pill red" style="font-size:16px; padding:12px 28px; margin-top:8px" onclick="window.location.href='mailto:tirthshah02@gmail.com'">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         Send me an email
       </button>
