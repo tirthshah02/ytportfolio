@@ -74,11 +74,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .logo-yt {
-  background: var(--yt-red);
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .logo-text { font-weight: 500; font-size: 18px; }
@@ -508,10 +505,20 @@ a { color: inherit; text-decoration: none; }
 
 .about-hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 60px;
-  align-items: center;
-  margin-bottom: 60px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-right {
+  padding-top: 8px;
 }
 
 .about-avatar {
@@ -538,7 +545,7 @@ a { color: inherit; text-decoration: none; }
 
 .section-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--yt-border); }
 
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 48px; }
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 0; }
 
 .skill-card {
   background: var(--yt-dark);
@@ -631,4 +638,51 @@ a { color: inherit; text-decoration: none; }
   .main { margin-left: 0; }
   .watch-layout { grid-template-columns: 1fr; }
   .about-hero { grid-template-columns: 1fr; }
+  .about-right { padding-top: 0; }
+}
+
+/* Easter egg popup */
+.easter-egg-popup {
+  position: fixed;
+  top: 70px;
+  right: 16px;
+  background: #212121;
+  border: 1px solid #303030;
+  border-radius: 12px;
+  padding: 16px 20px;
+  max-width: 320px;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  animation: slideIn 0.3s ease;
+  cursor: pointer;
+}
+
+.easter-egg-popup.hidden {
+  display: none;
+}
+
+.easter-egg-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin-bottom: 6px;
+}
+
+.easter-egg-body {
+  font-size: 13px;
+  color: #aaaaaa;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.easter-egg-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

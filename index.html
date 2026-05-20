@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<div class="easter-egg-popup hidden" id="easterEggPopup" onclick="handleEasterEggClick()">
+  <div class="easter-egg-title">Easter egg unlocked.</div>
+  <div class="easter-egg-body">Only curious people find this, and I love working with curious people. Let's talk.</div>
+  <div class="easter-egg-link">About Me →</div>
+</div>
+
 <!-- ═══════════════════════════════════ TOPBAR ═══════════════════════════════════ -->
 <header class="topbar">
   <div class="topbar-left">
@@ -17,9 +23,12 @@
     </button>
     <a class="logo" onclick="showPage('home')" style="cursor:pointer">
       <span class="logo-yt">
-        <svg width="22" height="16" viewBox="0 0 90 63" fill="white"><path d="M88.1 9.9C87 5.9 83.9 2.8 80 1.7 73 0 45 0 45 0S17 0 10 1.7C6.1 2.8 3 5.9 1.9 9.9 0 17 0 31.5 0 31.5s0 14.5 1.9 21.6C3 57.1 6.1 60.2 10 61.3 17 63 45 63 45 63s28 0 35-1.7c3.9-1.1 7-4.2 8.1-8.2C90 46 90 31.5 90 31.5S90 17 88.1 9.9z"/><polygon points="36,45 59,31.5 36,18" fill="#ff0000"/></svg>
-      </span>
-      <span class="logo-text">Tirth Shah</span><span class="logo-sub">IN</span>
+  <svg width="26" height="18" viewBox="0 0 90 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="4" width="82" height="55" rx="12" fill="#FF0000"/>
+    <polygon points="38,18.9 59,31.5 38,44.1" fill="white"/>
+  </svg>
+</span>
+      <span class="logo-text">Tirth Shah</span>
     </a>
   </div>
 
@@ -36,12 +45,15 @@
   </div>
 
   <div class="topbar-right">
-    <button class="icon-btn" aria-label="Notifications">
+    <button class="icon-btn" aria-label="Notifications" onclick="toggleEasterEgg()">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2zm6-6V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
     </button>
-    <button class="avatar-btn" onclick="showPage('about')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-      </button>
+    <button class="avatar-btn" onclick="showPage('about')"
+      style="background:none; padding:0; overflow:hidden">
+      <img src="tirth.jpg" alt="Tirth Shah"
+           style="width:100%; height:100%;
+           object-fit:cover; border-radius:50%">
+    </button>
   </div>
 </header>
 
@@ -115,38 +127,38 @@
   <div id="page-watch" class="page">
     <div class="watch-layout">
       <div class="watch-main">
-        <div class="video-player" id="watchPlayer">
-          <div class="player-content">
-            <div class="player-icon" id="watchIcon">🎬</div>
-            <div class="player-title" id="watchTitle">Project Title</div>
-            <div class="player-sub" id="watchSub">Channel • Role</div>
-          </div>
-        </div>
-
-        <h1 class="watch-title" id="watchHeadline"></h1>
-        <div class="watch-meta" id="watchMeta"></div>
-
-        <div class="watch-actions">
-          <button class="action-pill red" onclick="showPage('contact')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            Hire Me
-          </button>
-          <button class="action-pill" onclick="showPage('home')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20v-2z"/></svg>
-            Back to Feed
-          </button>
-          <button class="action-pill" onclick="navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16c-.8 0-1.4.4-1.9.9L8.9 12.7c.1-.2.1-.5.1-.7s0-.5-.1-.7l7.1-4.1c.5.5 1.2.8 1.9.8a3 3 0 0 0 0-6 3 3 0 0 0-3 3c0 .2 0 .5.1.7L7.9 9.8C7.4 9.3 6.7 9 6 9a3 3 0 0 0 0 6c.7 0 1.4-.3 1.9-.8l7.2 4.2c-.1.2-.1.4-.1.6a3 3 0 0 0 3 3 3 3 0 0 0 0-6z"/></svg>
-            Share
-          </button>
-          <a id="watchChannelLink" class="action-pill" href="#" target="_blank" style="display:none; text-decoration:none">
-            <svg width="16" height="16" viewBox="0 0 90 63" fill="currentColor"><path d="M88.1 9.9C87 5.9 83.9 2.8 80 1.7 73 0 45 0 45 0S17 0 10 1.7C6.1 2.8 3 5.9 1.9 9.9 0 17 0 31.5 0 31.5s0 14.5 1.9 21.6C3 57.1 6.1 60.2 10 61.3 17 63 45 63 45 63s28 0 35-1.7c3.9-1.1 7-4.2 8.1-8.2C90 46 90 31.5 90 31.5S90 17 88.1 9.9z"/><polygon points="36,45 59,31.5 36,18" fill="red"/></svg>
-            View Channel
-          </a>
-        </div>
-
-        <div class="watch-description" id="watchDesc"></div>
-      </div>
+  <h1 class="watch-title" id="watchHeadline"></h1>
+  <div class="watch-meta" id="watchMeta"></div>
+  <div class="watch-description" id="watchDesc"></div>
+  <div class="watch-actions" style="margin-top:16px">
+    <button class="action-pill red" onclick="showPage('contact')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      Hire Me
+    </button>
+    <button class="action-pill" onclick="showPage('home')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20v-2z"/>
+      </svg>
+      Back to Feed
+    </button>
+    <button class="action-pill" onclick="navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 16c-.8 0-1.4.4-1.9.9L8.9 12.7c.1-.2.1-.5.1-.7s0-.5-.1-.7l7.1-4.1c.5.5 1.2.8 1.9.8a3 3 0 0 0 0-6 3 3 0 0 0-3 3c0 .2 0 .5.1.7L7.9 9.8C7.4 9.3 6.7 9 6 9a3 3 0 0 0 0 6c.7 0 1.4-.3 1.9-.8l7.2 4.2c-.1.2-.1.4-.1.6a3 3 0 0 0 3 3 3 3 0 0 0 0-6z"/>
+      </svg>
+      Share
+    </button>
+    <a id="watchChannelLink" class="action-pill" href="#" target="_blank"
+       style="display:none; text-decoration:none">
+      <svg width="16" height="16" viewBox="0 0 90 63" fill="currentColor">
+        <path d="M88.1 9.9C87 5.9 83.9 2.8 80 1.7 73 0 45 0 45 0S17 0 10 1.7C6.1 2.8 3 5.9 1.9 9.9 0 17 0 31.5 0 31.5s0 14.5 1.9 21.6C3 57.1 6.1 60.2 10 61.3 17 63 45 63 45 63s28 0 35-1.7c3.9-1.1 7-4.2 8.1-8.2C90 46 90 31.5 90 31.5S90 17 88.1 9.9z"/>
+        <polygon points="36,45 59,31.5 36,18" fill="red"/>
+      </svg>
+      View Channel
+    </a>
+  </div>
+</div>
 
       <div class="watch-sidebar">
         <div class="up-next-label">More Projects</div>
@@ -159,72 +171,79 @@
   <div id="page-about" class="page">
     <div class="about-layout">
       <div class="about-hero">
-        <div>
-          <div class="about-avatar">TS</div>
+
+        <!-- LEFT COLUMN -->
+        <div class="about-left">
+          <div class="about-avatar" style="background:none; padding:0; overflow:hidden">
+            <img src="tirth.jpg" alt="Tirth Shah"
+                 style="width:100%; height:100%;
+                 object-fit:cover; border-radius:50%">
+          </div>
           <div class="about-name">Tirth Shah</div>
-          <div class="about-handle">YouTube Strategist & Content Producer</div>
+          <div class="about-handle">YouTube Strategist</div>
           <div class="about-stats-row">
             <div>
-              <div class="about-stat-val">10+</div>
+              <div class="about-stat-val">20+</div>
               <div class="about-stat-lbl">channels worked</div>
             </div>
             <div>
-              <div class="about-stat-val">200M+</div>
+              <div class="about-stat-val">140M+</div>
               <div class="about-stat-lbl">views influenced</div>
             </div>
             <div>
               <div class="about-stat-val">4 yrs</div>
-              <div class="about-stat-lbl">agency-side</div>
+              <div class="about-stat-lbl">experience</div>
             </div>
           </div>
-          <button class="action-pill red" style="margin-top:8px" onclick="showPage('contact')">
+          <button class="action-pill red" style="margin-bottom:24px" onclick="showPage('contact')">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             Contact / Hire Me
           </button>
-        </div>
-        <div>
           <p class="about-text">
-            I help YouTube channels grow — not through luck, but through strategy. Thumbnails that make people stop scrolling. Titles that make them click. Videos that make them stay.<br><br>
-            I've worked across niches: motorsport, specialty coffee, consumer tech, faceless explainers, sports storytelling, fitness tech, and creator education. Every channel is different. Every strategy is custom-built.<br><br>
-            Remote-based. Open to full-time roles globally.
+            4 years inside YouTube growth agencies and working directly with
+            creators, across 20+ channels. I've handled the full stack: thumbnails,
+            titles, scripts, and strategy, as well as the client relationships that
+            make the work actually land.
           </p>
         </div>
-      </div>
 
-      <div>
-        <div class="section-title">What I Do</div>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon">🖼️</div>
-            <div class="skill-name">Thumbnail Design</div>
-            <div class="skill-desc">High-contrast, emotion-driven thumbnails engineered for CTR</div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">🎯</div>
-            <div class="skill-name">Title & Packaging</div>
-            <div class="skill-desc">Headlines that create curiosity loops and drive clicks</div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">📈</div>
-            <div class="skill-name">Channel Strategy</div>
-            <div class="skill-desc">Positioning, content cadence, and audience growth systems</div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">✍️</div>
-            <div class="skill-name">Scripting</div>
-            <div class="skill-desc">Hooks, retention structures, and calls-to-action that convert</div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">🔍</div>
-            <div class="skill-name">Research & Ideation</div>
-            <div class="skill-desc">Finding the angle no one else has taken — consistently</div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">📊</div>
-            <div class="skill-name">Analytics & Iteration</div>
-            <div class="skill-desc">Reading the data, figuring out why, and doing better</div>
+        <!-- RIGHT COLUMN -->
+        <div class="about-right">
+          <div class="section-title">What I Do</div>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-icon">🖼️</div>
+              <div class="skill-name">Thumbnail Strategy</div>
+              <div class="skill-desc">Not just design. Understanding why people click, testing what works, and building visual systems that compound over time.</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">🎯</div>
+              <div class="skill-name">Title & Packaging</div>
+              <div class="skill-desc">Knowing when to use curiosity and when to use clarity. The right formula for the right traffic source.</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">✍️</div>
+              <div class="skill-name">Scripting</div>
+              <div class="skill-desc">Hooks that hold, structures that retain, and endings that convert. Built around retention data, not instinct.</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">📈</div>
+              <div class="skill-name">Channel Strategy</div>
+              <div class="skill-desc">Positioning, content architecture, and knowing when to double down and when to pivot.</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">🔍</div>
+              <div class="skill-name">Ideation & Research</div>
+              <div class="skill-desc">Finding the angle nobody else has taken. Backed by search data, competitor analysis, and pattern recognition across niches.</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">🤝</div>
+              <div class="skill-name">Client & Creator Relations</div>
+              <div class="skill-desc">Translating creative strategy into conversations that build trust and get work approved.</div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -234,14 +253,18 @@
     <div class="contact-layout">
       <div style="margin-bottom:32px">
         <h1 style="font-size:32px; font-weight:700; margin-bottom:8px">Let's work together</h1>
-        <p style="color:var(--yt-muted); font-size:16px">I'm open to full-time YouTube Strategist / Content Producer roles. If you run or work with a channel that's serious about growth, let's talk.</p>
+        <p style="color:var(--yt-muted); font-size:16px">Open to full-time YouTube Strategist roles with agencies and individual creators. If you are serious about growth, let's talk.</p>
       </div>
 
       <div class="contact-card">
         <div style="display:grid; gap:20px">
           <div>
             <div class="contact-label">Email</div>
-            <div class="contact-val">tirthshah02@gmail.com</div>
+            <div class="contact-val">
+              <a href="mailto:tirthshah02@gmail.com" style="color:inherit; text-decoration:none">
+                tirthshah02@gmail.com
+              </a>
+            </div>
           </div>
           <div>
             <div class="contact-label">Based in</div>
@@ -257,15 +280,29 @@
       <div class="contact-card">
         <div style="font-size:16px; font-weight:600; margin-bottom:16px">What I'm looking for</div>
         <ul style="color:var(--yt-muted); line-height:2; padding-left:20px; font-size:15px">
-          <li>Full-time YouTube Strategist / Head of Content role</li>
-          <li>Channel with an ambitious growth mandate</li>
-          <li>Team that takes content seriously as a business lever</li>
-          <li>Fully remote or remote-first team</li>
+          <li>Full-time YouTube Strategist or Content Strategist role</li>
+          <li>Agency or creator serious about channel growth</li>
+          <li>A role where strategy drives the work, not just supports it</li>
+          <li>Fully remote or remote-first</li>
         </ul>
       </div>
 
-      <button class="action-pill red" style="font-size:16px; padding:12px 28px; margin-top:8px" onclick="window.location.href='mailto:tirthshah02@gmail.com'">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <div class="contact-card">
+        <div style="font-size:16px; font-weight:600; margin-bottom:16px">What I'm not looking for</div>
+        <ul style="color:var(--yt-muted); line-height:2; padding-left:20px; font-size:15px">
+          <li>One-off freelance gigs</li>
+          <li>Purely editing or production roles</li>
+          <li>Graphic design or thumbnail execution roles. I strategize, I don't design in Photoshop</li>
+          <li>Channels looking for a one-person content army</li>
+        </ul>
+      </div>
+
+      <button class="action-pill red"
+        style="font-size:16px; padding:12px 28px; margin-top:8px"
+        onclick="window.location.href='mailto:tirthshah02@gmail.com'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
         Send me an email
       </button>
     </div>
